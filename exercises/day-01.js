@@ -3,9 +3,11 @@
 // Return the sum of.
 function sum(a, b) {
   // @TODO
+  return a+b;
 }
 
 sum(1, 2); // 3
+console.log(sum(1,2));
 
 // write a function called log data that
 // prints into the console the
@@ -14,6 +16,7 @@ var data = 10;
 
 function logData() {
   // @TODO
+  console.log(data);
 }
 
 logData();
@@ -23,8 +26,12 @@ logData();
 // num passed as an argument.
 // If the variable is not passed (undefined)
 // print 0 instead
-function logNumber(/* @TODO */) {
+function logNumber(/* @TODO */num) {
   // @todo
+  if(typeof num === 'undefined')
+    console.log(0);
+  else
+    console.log(num);
 }
 
 logNumber(10); // 10
@@ -35,7 +42,12 @@ logNumber(); // 0
 // and print an array containing
 // all of the elements
 function logAsArray(/* @TODO */) {
-  // @TODO
+  let numStr = [];
+  for (let i= 0; i<arguments.length; i++ ){
+    numStr.push(arguments[i]);
+  }
+    console.log(numStr);
+
 }
 
 logAsArray(1, 2); // [1,2]
@@ -46,8 +58,11 @@ logAsArray(1, 2, 3, 4, 5); // [1,2,3,4,5]
 // that takes an array as argument
 // and prints every element of
 // the array
-function logArray(/* @TODO */) {
+function logArray(/* @TODO */arrayOfNumbers) {
   // @TODO
+  /*arrayOfNumbers.array.forEach(element => {
+    console.log(element);
+  });*/
 }
 
 logArray([1, 2, 3, 4, 5]);
@@ -62,23 +77,29 @@ logArray([1, 2, 3, 4, 5]);
 // and execute it as a function as constructor
 // to generate a car object with the
 // properties model and year.
-function Car(brand, model, year) {
-  // @TODO
+class Car {
+  constructor(brand, model, year) {
+    this.brand = brand;
+    this.model = model;
+    this.year = year;
+  }
 }
 
-var teslaS = new Car(/* @TODO */);
+var teslaS = new Car(/* @TODO */"brand", "model", "year");
+console.log(teslaS);
 
 // Let calculateRectanglePerimenter be a function
 // returns the perimeter when its applied to
 // a rectangle object.
 function calculateRectanglePerimeter() {
   // @TODO
+  return (2 *this.height) + (2*this.width);
 }
 
-calculateRectanglePerimeter.apply({
+console.log(calculateRectanglePerimeter.apply({
   height: 2,
   width: 2
-}); // 8
+})); // 8
 
 // Write a function called calculateCirclePerimeter
 // and create another function called boundCalculateCirclePerimeter
@@ -86,13 +107,14 @@ calculateRectanglePerimeter.apply({
 // to a circle object
 function calculateCirclePerimeter() {
   // @TODO
+  return 2*Math.PI * this.radius;
 }
 
 var boundCalculateCirclePerimeter = calculateCirclePerimeter.bind({
   radius: 2
 });
 
-boundCalculateCirclePerimeter(); // ~ 12.56
+console.log(boundCalculateCirclePerimeter()); // ~ 12.56
 
 // CODE CHALLENGES
 
