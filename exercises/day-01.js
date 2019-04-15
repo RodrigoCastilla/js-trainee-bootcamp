@@ -60,9 +60,9 @@ logAsArray(1, 2, 3, 4, 5); // [1,2,3,4,5]
 // the array
 function logArray(/* @TODO */arrayOfNumbers) {
   // @TODO
-  /*arrayOfNumbers.array.forEach(element => {
-    console.log(element);
-  });*/
+  for (num of arrayOfNumbers){
+    console.log(num);
+  }
 }
 
 logArray([1, 2, 3, 4, 5]);
@@ -123,18 +123,24 @@ console.log(boundCalculateCirclePerimeter()); // ~ 12.56
 // returns it reversed
 function reverseString(str) {
   // @TODO
+  let temp = str.split('');
+  temp.reverse();
+  return temp.join('');
 }
 
-reverseString("hola"); // aloh
+console.log(reverseString("hola")); // aloh
 
 // Write a function called sortString that
 // takes a string as an argument and
 // returns it sorted alphabetically
 function sortString(str) {
   // @TODO
+  let temp = str.split('');
+  temp.sort();
+  return temp.join('');
 }
 
-sortString("david"); // 'addiv'
+console.log(sortString("david")); // 'addiv'
 
 // Write a function called arePalindromes that
 // takes two strings as arguments and
@@ -142,8 +148,11 @@ sortString("david"); // 'addiv'
 // of the other returns returns false otherwise
 function arePalindromes(a, b) {
   // @TODO
+  let reversed = a;
+
+  return (reversed.split('').reverse().join('') === b);
 }
 
-arePalindromes("anita lava la tina", "anit al aval atina"); // true
-arePalindromes("avid", "diva"); // true
-arePalindromes("juan", "jose"); // false
+console.log(arePalindromes("anita lava la tina", "anit al aval atina")); // true
+console.log(arePalindromes("avid", "diva")); // true
+console.log(arePalindromes("juan", "jose")); // false
