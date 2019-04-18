@@ -3,20 +3,23 @@
 // Create a function called `Vehicle` that accepts
 // a driver as an argument and assign the driver
 // to the context and execute it as a constructor
-function Vehicle() {
+function Vehicle(driver) {
   // @todo
+  this.driver = driver;
 }
 
-var vehicle; /* = @TODO */
+var vehicle = new Vehicle ("Charly"); /* = @TODO */
 
 // Create a function called `Car` that accepts a driver,
 // calls the function `Vehicle` with `call` and pass the
 // driver and assign the speed in the context to 0
-function Car() {
+function Car(driver) {
   // @TODO
+  Vehicle.call(this, driver);
+  this.speed = 0;
 }
 
-var teslaS; /* = @TODO */
+var teslaS = new Car("Charly"); /* = @TODO */
 
 // Add a function called `drive`, `stop` and `speed` to
 // the `Car` prototype. Every time you call the
@@ -26,24 +29,35 @@ var teslaS; /* = @TODO */
 // "method" `getSpeed` it returns the speed
 Car.prototype.stop = function() {
   // @TODO
+  this.speed = 0;
 };
 
 Car.prototype.drive = function() {
   // @TODO
+  this.speed =50;
 };
 
-Car.prototype.speed = function() {
+Car.prototype.getSpeed = function() {
   // @TODO
+  return this.speed;
 };
 
+
+console.log(teslaS);
+console.log(teslaS.getSpeed());
+teslaS.drive();
+console.log(teslaS);
+teslaS.stop();
+console.log(teslaS);
 // CLASSES
 
 // Create a class called `Vehicle` that accepts
 // a driver as an argument on the constructor
 //  and assign the driver to the context
 class Vehicle {
-  constructor(/* @TODO */) {
+  constructor(driver) {
     // @todo
+    this.driver = driver;
   }
 }
 
@@ -53,13 +67,15 @@ var vehicle; /* = @TODO */
 // extends the `Vehicle` class and passes the driver
 // to the `Car` constructor driver and assign the
 // speed in the context to 0
-class Car /* @TODO */ {
-  constructor(/* @TODO */) {
+class Car /* @TODO */ extends Vehicle{
+  constructor(driver) {
     // @TODO
+    super(driver);
+    this.speed = 0;
   }
 }
 
-var teslaS; /* = @TODO */
+var teslaS = new Car("Charly"); /* = @TODO */
 
 // Add the methods `drive`, `stop` and `getSpeed` to
 // the `Car` class. Every time you call the
@@ -67,19 +83,26 @@ var teslaS; /* = @TODO */
 // every time you call the "method" `stop` it sets the
 // speed to `0` and finally every time you call the
 // "method" `getSpeed` it returns the speed
-class Car /* @TODO */ {
+class Car /* @TODO */ extends Vehicle{
   // the rest of the code
+  constructor(driver){
+    super(driver);
+    this.speed = 0;
+  }
 
   drive() {
     // @TODO
+    this.speed = 50;
   }
 
   stop() {
     // @TODO
+    this.speed = 0;
   }
 
-  speed() {
+  getSpeed() {
     // @TODO
+    return this.speed;
   }
 }
 

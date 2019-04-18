@@ -1,16 +1,38 @@
-class Person {
-	constructor(name, age) {
-	  this.name = name;
-	  this.age = age;
-	}
+class Vehicle {
+  constructor(driver) {
+    // @todo
+    this.driver = driver;
+  }
+}
+
+
+class Car /* @TODO */ extends Vehicle{
+  // the rest of the code
+  constructor(driver){
+    super(driver);
+    this.speed = 0;
   }
 
-class Student extends Person {
-	constructor(name, age, enrollment) {
-	  super(name, age);
-	  this.enrollment = enrollment;
-	}
+  drive() {
+    // @TODO
+    this.speed = 50;
   }
-  
-  var jenny = new Student("jenny", 21, "CS101");
-  console.log (jenny);
+
+  stop() {
+    // @TODO
+    this.speed = 0;
+  }
+
+  getSpeed() {
+    // @TODO
+    return this.speed;
+  }
+}
+
+var teslaS = new Car("Charly");
+console.log(teslaS);
+console.log(teslaS.getSpeed());
+teslaS.drive();
+console.log(teslaS);
+teslaS.stop();
+console.log(teslaS);
