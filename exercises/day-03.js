@@ -75,7 +75,25 @@ class Car /* @TODO */ extends Vehicle{
   }
 }
 
-var teslaS = new Car("Charly"); /* = @TODO */
+var teslaS = new Car("Charly"); 
+
+class Vehicle{
+  constructor(driver){
+    this.driver = driver;
+  }
+}
+
+class Car{
+  constructor(driver){
+    super (driver);
+    this.speed = 0;
+  }
+}
+Object.setPrototypeOf(Car, Vehicle);
+
+var obj = new Car("Charly");
+console.log(obj)
+
 
 // Add the methods `drive`, `stop` and `getSpeed` to
 // the `Car` class. Every time you call the
@@ -112,6 +130,30 @@ class Car /* @TODO */ extends Vehicle{
 
 // Replicate all the previous examples using
 // plain objects and `Object.setPrototypeOf`
+var Vehicle = {
+  driver: "Charly"
+};
+
+var Car = {
+  speed: 0
+};
+
+Object.setPrototypeOf(Car, Vehicle);
+console.log(Car.name);
+
+var Car = {
+	speed: 0,
+	drive: function() {		this.speed = 50; console.log("Speed = 50");	},
+	stop: function() {	this.speed = 0;	console.log("Speed = 0");	},
+	getSpeed: function(){return this.speed;	}
+}
+
+
+Object.setPrototypeOf(Car, Vehicle);
+Car.drive();
+Car.stop();
+console.log(Car);
+
 
 //
 // OBJECT CREATE
@@ -119,6 +161,23 @@ class Car /* @TODO */ extends Vehicle{
 
 // Replicate all the previous examples using
 // plain objects and `Object.create`
+var Vehicle = {
+	driver: "Charly"
+};
+
+var teslaS = Object.create(Vehicle);
+teslaS.speed = 0;
+
+console.log(teslaS);
+
+var teslaS = Object.create(Vehicle);
+teslaS.speed = 0;
+teslaS.drive = function () {this.speed =50;	};
+teslaS.stop = function () {this.speed = 0;	};
+teslaS.getSpeed = function () {return this.speed;	};
+
+console.log(teslaS;
+
 
 //
 // MIXINS
@@ -127,9 +186,59 @@ class Car /* @TODO */ extends Vehicle{
 // Replicate all the previous examples using
 // plain objects and mixins
 
+var Vehicle = {
+	driver: "Charly"
+};
+
+var teslaS = Object.assign({speed: 0}, Vehicle);
+
+console.log(teslaS);
+
+
+var teslaS = Object.assign({
+	speed: 0, 
+	drive: function () {this.speed =50;	},
+	stop: function () {this.speed = 0;	},
+	getSpeed: function () {return this.speed;	}
+}, Vehicle);
+
+console.log(teslaS);
+
 //
 // FUNCTIONAL MIXINS
 //
 
 // Replicate all the previous examples using
 // plain objects and functional mixins
+var Vehicle = (target, driver) => ({
+  ...target,
+  driver
+});
+
+var Car = (target) => ({
+  ...target,
+  speed: 0
+});
+
+var vehicle = Vehicle({}, "Charly");
+var car = Car(vehicle);
+
+console.log(car);
+
+var Car = (target) => ({
+  ...target,
+	speed: 0,
+	drive: function (){
+		this.speed = 50;
+	},
+	stop: function (){
+		this.speed = 0;
+	},
+	getSpeed: function (){
+		return this.speed;
+	}
+});
+
+var vehicle = Vehicle({}, "Charly");
+var car = Car(vehicle);
+console.log(car);
