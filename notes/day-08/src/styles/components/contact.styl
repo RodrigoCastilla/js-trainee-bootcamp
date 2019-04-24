@@ -1,0 +1,32 @@
+@require "../base/colors.styl";
+@require "../base/fonts.styl";
+@require "../base/units.styl";
+
+.contact
+    &__container
+        background-color: $background_gray
+        box-sizing: border-box
+        display: flex
+        justify-content: space-evenly
+        display: block
+        padding: $normal_padding
+        padding-bottom: $double_padding
+        width: 100%
+        border-bottom: 0.375rem solid $border_green
+        text-align: center
+    
+    &__title
+        color: $border_green
+        font-family: Arial
+        
+    &__subtitle
+        font-family: sans-serif
+    
+    &__button
+        color: $background_white
+        background: $border_green
+        border: 0
+        padding: 0.5 rem
+        width: 100%
+        font-weight: bold
+        font-family: sans-serif

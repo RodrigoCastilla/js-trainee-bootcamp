@@ -1,0 +1,49 @@
+@require "../base/colors.styl";
+@require "../base/fonts.styl";
+@require "../base/units.styl";
+
+.projects
+    &__container        
+        
+        //justify-content: space-evenly
+        display: block
+        justify-content: space-between
+        margin: $double_margin $normal_margin
+        //padding: $double_padding $normal_padding
+
+    &__title
+        color: $border_green
+        font-family: Arial
+
+    &__item
+        box-sizing: border-box
+        width: 100%
+        //height: 100%
+        margin: $normal_margin 0 
+        background: $background_gray
+        padding: $normal_padding
+        font-family: sans-serif
+
+        //margin: $normal_margin
+
+        &__title &__description
+            color: $text_color 
+
+        &__button
+            background: $circle_purple
+            border: $circle_purple
+            box-sizing: border-box
+            color: $background_white
+            width: 100%
+            padding: 0.5rem
+            font-weight: bold
+
+
+        /*&:first-child
+            background-color: $circle_purple
+
+        &:nth-child(2)
+            background-color: $circle_orange
+
+        &:last-child
+            background-color: $circle_green*/
