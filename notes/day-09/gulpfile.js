@@ -1,7 +1,6 @@
 const { series, watch } = require("gulp");
 const pug = require("gulp-pug");
 const stylus = require("gulp-stylus");
-const browserify = require("gulp-browserify");
 const cleanCSS = require("gulp-clean-css");
 const gulp = require("gulp");
 
@@ -13,7 +12,6 @@ const gulp = require("gulp");
 function devWatch() {
   watch(["src/styles/**/*.styl"], devCss);
   watch(["src/views/**/*.pug"], devHtml);
-  watch(["src/scripts/**/*.js"], devJs);
 }
 
 function devHtml() {
@@ -23,7 +21,6 @@ function devHtml() {
     .pipe(gulp.dest("public"));
 }
 
-// nodejs streams
 function devCss() {
   return gulp
     .src("src/styles/*.styl")
@@ -31,23 +28,15 @@ function devCss() {
     .pipe(gulp.dest("public"));
 }
 
-function devJs() {
-  return gulp
-    .src("src/scripts/app.js")
-    .pipe(
-      browserify({
-        insertGlobals: false,
-        debug: true
-      })
-    )
-    .pipe(gulp.dest("./public/js"));
-}
-
 function copyCss() {
   return gulp
     .src("src/normalize.css")
     .pipe(cleanCSS({ compatibility: "ie8" }))
     .pipe(gulp.dest("public/vendor/"));
+}
+
+function copyImages() {
+  return gulp.src("src/images/*.*").pipe(gulp.dest("public/images/"));
 }
 
 /**
@@ -77,18 +66,6 @@ function prodCss() {
     .pipe(gulp.dest("public"));
 }
 
-function prodJs() {
-  return gulp
-    .src("src/scripts/app.js")
-    .pipe(
-      browserify({
-        insertGlobals: false,
-        debug: false
-      })
-    )
-    .pipe(gulp.dest("./public/js"));
-}
+exports.build = series(copyCss, copyImages, prodHtml, prodCss);
 
-exports.build = series(prodHtml, prodCss, prodJs);
-
-exports.default = series(copyCss, devHtml, devCss, devJs, devWatch);
+exports.default = series(copyCss, copyImages, devHtml, devCss, devWatch);
