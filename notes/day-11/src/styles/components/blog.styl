@@ -44,17 +44,12 @@
  */
 @media screen and (min-width: $tablet_width)
     .blog
-        &__container
-            align-items: center
-            display: flex
-            justify-content: center
-            flex-direction: column
-            padding: 0
-
+        &__container,
         &__picture
-            display: block
-            padding: 0
-
+            display: inline-block
+            vertical-align: middle
+            width: 50%
+        
         &__image
             height: 15rem
             object-fit: cover
