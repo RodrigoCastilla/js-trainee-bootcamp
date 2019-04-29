@@ -77,22 +77,6 @@ class Car /* @TODO */ extends Vehicle{
 
 var teslaS = new Car("Charly"); 
 
-class Vehicle{
-  constructor(driver){
-    this.driver = driver;
-  }
-}
-
-class Car{
-  constructor(driver){
-    super (driver);
-    this.speed = 0;
-  }
-}
-Object.setPrototypeOf(Car, Vehicle);
-
-var obj = new Car("Charly");
-console.log(obj)
 
 
 // Add the methods `drive`, `stop` and `getSpeed` to
@@ -176,7 +160,7 @@ teslaS.drive = function () {this.speed =50;	};
 teslaS.stop = function () {this.speed = 0;	};
 teslaS.getSpeed = function () {return this.speed;	};
 
-console.log(teslaS;
+console.log(teslaS);
 
 
 //

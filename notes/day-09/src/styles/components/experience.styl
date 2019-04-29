@@ -1,0 +1,71 @@
+@require "../base/colors.styl";
+@require "../base/fonts.styl";
+@require "../base/units.styl";
+
+.experience
+    &__container        
+        
+        //justify-content: space-evenly
+        width: 100%
+        display: block
+        justify-content: space-evenly
+        
+        padding: $double_padding auto 
+        
+        //padding: $double_padding $normal_padding
+
+    &__title
+        color: $border_green
+        font-family: Arial
+        text-align: center
+
+    &__item
+        box-sizing: border-box
+        width: 100%
+        max-width: 20rem
+        border: $border_gray
+        margin: $double_margin auto
+        padding: $normal_padding
+        display: block
+        border-style: solid
+        border-width: thin
+        background-color: transparent 
+        //margin: $normal_margin auto
+        //padding: $normal_padding
+        font-family: sans-serif
+
+    &__item__company,
+    &__item__position,
+    &__item__duration
+        color: $text_color
+        font-size: 1rem 
+
+    &__item__link
+        color: $border_green
+        width: 100%
+        font-weight: bold
+        text-decoration: none
+    &__item__link a:link,
+    &__item__link a:visited,
+    &__item__link a:active,
+    &__item__link a:hover
+        color: $border_green    
+
+@media screen and (min-width: $tablet_width)
+    .experience
+        &__container        
+            
+            //justify-content: space-evenly
+            min-width: 100%
+
+            display: flex
+            justify-content: space-evenly
+            
+            padding: $triple_padding auto 
+        
+        &__item
+            box-sizing: border-box
+            width: 100%
+            max-width: 15rem
+            display: inline-block
+            margin: $double_margin
