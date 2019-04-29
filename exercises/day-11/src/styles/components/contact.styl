@@ -1,0 +1,47 @@
+@require "../base/colors.styl";
+@require "../base/fonts.styl";
+@require "../base/units.styl";
+
+.contact
+    &__container
+        background-color: #f7fdfd
+        box-sizing: border-box
+        justify-content: space-evenly
+        display: block
+        padding: $normal_padding
+        padding-bottom: $double_padding
+        width: 100%
+        text-align: center
+    
+    &__title
+        color: $border_green
+        font-family: Arial
+        
+    &__subtitle
+        font-family: sans-serif
+    
+    &__box
+        box-sizing: border-box
+        padding: $normal_padding
+
+    &__button
+        color: $background_white
+        background: $border_green
+        border: 0
+        padding: 0.75rem
+        width: 100%
+        font-weight: bold
+        font-family: sans-serif
+        max-width: 30rem
+        
+
+@media screen and (min-width: $tablet_width)
+    .contact
+        &__title
+            text-align: center
+            font-size: 3rem
+        &__button
+            border: none 
+            padding: 0.75rem
+            width: 100%
+            max-width: 25rem
