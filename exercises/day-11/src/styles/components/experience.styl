@@ -3,7 +3,13 @@
 @require "../base/units.styl";
 
 .experience
-    &__container        
+    background: $lightGray_color
+    //text-align: center
+    padding-top: $double_padding
+    padding-bottom: $double_padding
+    &__container
+        
+        //display: block        
         
         //justify-content: space-evenly
         //width: 100%
@@ -16,9 +22,10 @@
         color: $border_green
         font-family: Arial
         text-align: center
+        color:$darkBlue_color
 
     &__item
-        box-sizing: border-box
+        /*box-sizing: border-box
         width: 100%
         max-width: 20rem
         //border: $border_gray
@@ -30,40 +37,81 @@
         background-color: transparent 
         //margin: $normal_margin auto
         //padding: $normal_padding
-        font-family: sans-serif
-
-    &__item__company,
-    &__item__position,
-    &__item__duration
-        color: $text_color
+        font-family: sans-*/
+        background: #fff;
+        border-radius: 2px;
+        box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24)
+        //display: inline-block;
+        max-height: 100%
+        max-width: 25rem
+        margin: $normal_margin
+        padding: $normal_padding
+        //position: relative;
+        //width:
+    &__item__head
+        width:100%
+        border-bottom: .1rem solid $darkBlue_color
+        padding-bottom: $normal_padding
+    &__item__head__info
+        display: inline-block
+        //padding: $normal_padding
+        //margin: $normal_margin
+        margin-left: $normal_margin
+        margin-right: $double_margin
+        color: $darkBlue_color
         font-size: 1rem 
+        text-align: left 
+        vertical-align: middle
+        
+        
+        
+    &__item__company
+        font-size: 1.5rem
+    &__item__position
+        font-size: 1rem
+        font-weight: normal
+    &__item__duration
+        font-weight: lighter
+        
 
-    &__item__link
-        color: $border_green
+    &__item__body
         width: 100%
+        text-align: right
+    &__item__description
+        text-align: left
+        color:$darkGray_color
+    &__item__link
+        color: $darkBlue_color
         font-weight: bold
         text-decoration: none
+        text-align: right
     &__item__link a:link,
     &__item__link a:visited,
     &__item__link a:active,
     &__item__link a:hover
-        color: $border_green    
-
-@media screen and (min-width: $tablet_width)
+        color: $darkBlue_color
+         
+     
+    &__item__logo
+            border-radius: .5rem
+            width: 35%
+            height: 35%
+            margin-right: $normal_padding
+            vertical-align: middle
+            //ertical-align: middle
+            
+/*@media screen and (min-width: $tablet_width)
     .experience
         &__container        
-            
-            //justify-content: space-evenly
-            /*min-width: 100%
-
-            display: flex
-            justify-content: space-evenly
-            
-            padding: $triple_padding auto */
+            display: inline-block
         
         &__item
+            box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24)
+            //transition: all 0.3s cubic-bezier(.25,.8,.25,1)
             //box-sizing: border-box
             //width: 100%
             max-width: 20rem
             //display: inline-block
-            margin: $double_margin
+            margin: $double_margin*/
+
+        

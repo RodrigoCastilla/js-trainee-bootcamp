@@ -1,18 +1,29 @@
 @require '../base/units'
 
 .hero
+    background-image: url('./images/hero-bg.png')
+    background-position: center 
+    background-repeat: no-repeat
+    background-size: 100vw 60vw
+    // width: 100%
+    //padding-top: 3rem
     &__container
-        box-sizing: border-box
-        padding: 3rem $normal_padding
-        width: 100%
-        background-image: url('./images/dots-bg.png')
-        background-size: cover
-    
-    &__title
         font-family: arial
-        font-size: 1.5rem
-        margin: $double_margin auto
-        padding: $normal_padding
-        background: $background_white
-        max-width: 20rem
         text-align: center
+        color: white 
+    &__position
+        margin: 0 0 $double_margin 0
+    
+    &__photo
+        background-color: white
+        //background-position: center
+        //border: 0.1rem solid gray
+        margin: auto auto
+        box-shadow: 0 10px 10px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23)
+        border-radius: 1rem
+        width: 7rem
+        height: 7rem
+    &__bio
+        text-align: center
+        margin: auto auto
+        padding: $double_padding
