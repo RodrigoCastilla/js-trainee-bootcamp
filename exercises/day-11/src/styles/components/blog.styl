@@ -7,33 +7,39 @@
  * Mobile / Base Styles
  */
 .blog
-    background-color: $background_dark
-
+    
     &__container
         @extend .g-container
         text-align: center
-    
+    &__main-title
+        text-align: center
+        background-color: $lightGray_color 
+        padding: $double_padding $normal_padding
+        color: $darkBlue_color
     &__title,
     &__date
-        color: $white_text
+        color: $darkBlue_color
         font-family: $text_font
         text-align: center
-        margin: 0
+        margin: $normal_margin
 
+    &__title
+        font-size: 1.5rem
     &__date
-        font-size: 0.75rem
+        font-size: 1rem
         font-weight: 100
         margin-top: 0.5rem
 
     &__read
-        background-color: $background_purple
-        border: none
-        color: $white_text
-        display: inline-block
-        font-size: 0.8rem
+        background-color: $lightBlue_color
+        border: 0
+        border-radius: 0.5rem
+        color: $lightGray_color
+        font-weight: bold
+        font-size: 1.2rem
         font-family: $text_font
         margin-top: $double_margin
-        padding: 0.5rem $normal_padding
+        padding: $normal_padding $triple_padding
     
     &__picture
         height: 15rem

@@ -3,62 +3,88 @@
 @require "../base/units.styl";
 
 .projects
+    font-family: $text_font
     &__container        
         
         //justify-content: space-evenly
-        display: block
-        justify-content: space-evenly
-        margin: $double_margin $normal_margin 
-        //padding: $double_padding $normal_padding
+        //display: block
+        //justify-content: space-evenly
+        //margin: $double_margin $normal_margin
+
+        height: 100%
+        //width: 100vw 
+        padding: $double_padding $normal_padding
 
     &__title
         color: $border_green
-        font-family: Arial
+        font-family: $title_font
         text-align: center
+        margin: auto
+        margin-top: $normal_margin
 
     &__item
         box-sizing: border-box
-        width: 100%
-        max-width: 37.5rem
+        /*width: 100%
+        max-width: 100%*/
         
         //height: 100%
+        //border: .1rem solid $darkBlue_color
+        box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24)
+        border-radius: 0.5rem
         margin: $normal_margin auto
-        background: $background_gray
+        padding-bottom: $normal_padding
+
+    &__item__title
+        color: #ffffff
+        background-color: $darkBlue_color
         padding: $normal_padding
-        font-family: sans-serif
-
-        //margin: $normal_margin
-
-        &__title &__description
-            color: $text_color 
-
-        &__button
-            background: $circle_purple
-            border: $circle_purple
-            box-sizing: border-box
-            color: $background_white
-            width: 100%
-            padding: 0.75rem
-            font-weight: bold
-
-@media screen and (min-width: $tablet_width)
-    .projects
-        &__container        
-            
-            //justify-content: space-evenly
-            min-width: 100%
-
-            display: flex
-            justify-content: space-evenly
-            
-            padding: $triple_padding auto 
+        border-top-left-radius: 0.5rem
+        border-top-right-radius: 0.5rem
+        margin: 0 auto
+    &__item__image-container
+        width: 100%
+        height: auto
+        left: 0px
+        right: 0px   
+    &__item__img
+        width: 100%
+        height: auto
+        left: 0px
+        right: 0px 
+    &__item__description
+        color: $text_color 
+        margin: $double_margin $normal_margin
         
-        &__item
-            box-sizing: border-box
-            width: 100%
-            max-width: 20rem
-            display: inline-block
-            margin: $double_margin
+    &__item__button
+        background: $lightBlue_color
+        border: $lightBlue_color
+        //box-sizing: border-box
+        color: #ffffff
+        //max-width: 100%
+        border-radius: .5rem
+        padding: $normal_padding $double_padding
+        margin: $double_margin auto
+        display: block
+        font-weight: bold
+
+// @media screen and (min-width: $tablet_width)
+//     .projects
+//         &__container        
+            
+//             //justify-content: space-evenly
+//             min-width: 100%
+
+//             display: flex
+//             justify-content: space-evenly
+            
+//             padding: $triple_padding auto 
+        
+//         &__item
+//             box-sizing: border-box
+//             width: 100%
+//             max-width: 20rem
+//             display: inline-block
+//             margin: $double_margin
         /*&:first-child
             background-color: $circle_purple
 

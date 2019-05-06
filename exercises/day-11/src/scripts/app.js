@@ -32,7 +32,11 @@ window.addEventListener("load", function() {
 
         const blogDate = document.createElement("p");
         blogDate.setAttribute("class", "blog__date");
-        blogDate.textContent = "Published: " + new Date(post.publication_date);
+        let dateFormat = new Date(post.publication_date);
+        const monthNames = ["January", "February", "March", "April", "May", "June",
+        "July", "August", "September", "October", "November", "December"];
+        let dateText = ""+ monthNames[dateFormat.getMonth()] +" " + dateFormat.getDate() + ", " + dateFormat.getFullYear();
+        blogDate.textContent = "Published: " + dateText;
         blogPost.appendChild(blogDate);
 
         const readMore = document.createElement("button");

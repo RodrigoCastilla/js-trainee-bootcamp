@@ -50,6 +50,7 @@ window.addEventListener("load", function() {
         container.appendChild(blogPost);
         picture.appendChild(image);
         container.appendChild(picture);
+        console.log("Elements charged...");
 
         console.log("blogPost:", blogPost);
         console.log("container:", container);
