@@ -20,14 +20,26 @@ const addUserName = (req, res) => {
   res.redirect("/users");
 };
 
+
 // PUT /users/mishelashala
-const updateUsername = () => {};
+const updateUsername = (req, res) => {};
 
 // DELETE /users/mishelashala
-const deleteUsername = () => {};
+const deleteUsername = (req, res) => {
+  const { username } = req.body;
+
+  if (!username.length) {
+    return res.render("error", {
+      message: "That username doesn't exist"
+    });
+  }
+
+  userService.addUsername(username);
+  res.redirect("/users");
+};
 
 // GET /useres/mishelashala
-const getSingleUsername = () => {};
+const getSingleUsername = (req, res) => {};
 
 module.exports = {
   getUsernameList,

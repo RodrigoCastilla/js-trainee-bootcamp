@@ -24,4 +24,18 @@ usersRouter.post(
   usersController.addUserName
 );
 
+usersRouter.delete(
+  "/",
+  userValidator.isValidUsername,
+  usersController.deleteUsername
+);
+
+usersRouter.put(
+  "/",
+  userValidator.isValidUsername,
+  usersController.updateUsername
+);
+
+
+
 module.exports = usersRouter;
